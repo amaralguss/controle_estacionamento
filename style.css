@@ -1,0 +1,65 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    background-color: #f0fdf4;
+    color: #2e7d32;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1b5e20;
+  }
+  
+  form, .vagas-lista {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  input, button {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: 1px solid #a5d6a7;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #43a047;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #2e7d32;
+  }
+  
+  .vaga-card {
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .link-botao {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #66bb6a;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 20px;
+  }
+  
+  .link-botao:hover {
+    background-color: #388e3c;
+  }
+  

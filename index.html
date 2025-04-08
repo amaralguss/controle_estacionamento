@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Vagas Cadastradas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Vagas Reservadas</h1>
+
+  <div class="vagas-lista" id="listaVagas"></div>
+
+  <footer style="text-align: center; margin-top: 40px; color: #4caf50;">
+    <p>Criado por Gustavo Bortoli do Amaral!</p>
+  </footer>
+
+  <script>
+    const vagasFicticias = [
+      {
+        placa: "ABC-1234",
+        proprietario: "João da Silva",
+        apartamento: "101",
+        bloco: "A",
+        modelo: "HB20",
+        cor: "Preto",
+        vaga: "1"
+      },
+      {
+        placa: "XYZ-9876",
+        proprietario: "Maria Souza",
+        apartamento: "203",
+        bloco: "B",
+        modelo: "Onix",
+        cor: "Branco",
+        vaga: "2"
+      }
+    ];
+
+    function carregarVagas() {
+      const container = document.getElementById("listaVagas");
+      container.innerHTML = "";
+
+      if (vagasFicticias.length === 0) {
+        container.innerHTML = "<p>Nenhuma vaga cadastrada.</p>";
+        return;
+      }
+
+      vagasFicticias.forEach((vaga, index) => {
+        const card = document.createElement("div");
+        card.className = "vaga-card";
+        card.innerHTML = `
+          <p><strong>Placa:</strong> ${vaga.placa}</p>
+          <p><strong>Proprietário:</strong> ${vaga.proprietario}</p>
+          <p><strong>Apartamento:</strong> ${vaga.apartamento} - Bloco ${vaga.bloco}</p>
+          <p><strong>Veículo:</strong> ${vaga.modelo} - ${vaga.cor}</p>
+          <p><strong>Nº da Vaga:</strong> ${vaga.vaga}</p>
+          <button onclick="removerVaga(${index})">Remover</button>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function removerVaga(index) {
+      if (confirm("Tem certeza que deseja remover essa vaga?")) {
+        vagasFicticias.splice(index, 1);
+        carregarVagas();
+      }
+    }
+
+    carregarVagas();
+  </script>
+</body>
+</html>
